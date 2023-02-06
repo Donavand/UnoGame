@@ -4,7 +4,8 @@ import random
 def Builddeck():
     Deck = []
     colors = ["Blue", "Green", "Red", "Yellow"]
-    values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "Draw Two", "Draw Four", "Skip", "Reverse"]
+    values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+              "Draw Two", "Draw Four", "Skip", "Reverse"]
     wilds = ["Wild", "Wild Draw Four"]
     for color in colors:
         for value in values:
@@ -42,6 +43,7 @@ def ShowHand(player, playerHand):
     print("")
 
 
+# TODO: Fix this function
 def canPlay(color, value, playersHand):
     for card in playersHand:
         if "wild" in card:
@@ -60,7 +62,8 @@ players = []
 colors = ["Blue", "Green", "Red", "Yellow"]
 numplayers = int(input("How many players? "))
 while numplayers < 2 or numplayers > 4:
-    numplayers = int(input("invalid. Please enter a number between 2-4. How many player?"))
+    numplayers = int(
+        input("invalid. Please enter a number between 2-4. How many player?"))
 for player in range(numplayers):
     players.append(drawCards(5))
 
@@ -75,13 +78,17 @@ if currentcolor != "Wild":
 else:
     cardval = "Any"
 
+# follow what I did from watching me do it
 while playing:
     ShowHand(playerTurn, players[playerTurn])
     print("Card on the top of the discard pile:{}".format(discards[-1]))
     if canPlay(currentcolor, cardval, players[playerTurn]):
         cardchosen = int(input("Which card do you want to play?"))
+
+    # remember to fix this loop
     while not canPlay(currentcolor, cardval, players[playerTurn][cardchosen - 1]):
-        cardchosen = int(input(" Not a valid card. Which card do you want to play?"))
+        cardchosen = int(
+            input(" Not a valid card. Which card do you want to play?"))
         print("You played{}".format(players[playerTurn][cardchosen - 1]))
         discards.append(players[playerTurn].pop(cardchosen - 1))
     if len(players[playerTurn]) == 0:
@@ -90,6 +97,7 @@ while playing:
     else:
         # checking for special cards
         splitCard = discards[-1].split("cardval")
+
     currentcolor = splitCard[0]
     if len(splitCard) == 1:
         cardval = "Any"
@@ -100,8 +108,11 @@ while playing:
             print("{}){}".format(x + 1, colors[x]))
         newColor = int(input("What color would you like to choose? "))
         while newColor < 1 or newColor > 4:
-            newColor = int(input(" Invalid option. What color would you like to choose? "))
+            newColor = int(
+                input(" Invalid option. What color would you like to choose? "))
         currentcolor = colors[newColor - 1]
+
+    # Fix this
     if cardval == "Reverse":
         playerDirection = playerDirection * -1
     elif cardval == "Skip":
