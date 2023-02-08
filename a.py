@@ -105,7 +105,7 @@ def _________():
 
 def __________():
     import pyautogui
-    pyautogui.write("Demontime Daniels Strikes again!!", interval=0.1)
+    pyautogui.write("Demontime Daniels Strikes again!!", interval=0.05)
 
 
 def ____________():
