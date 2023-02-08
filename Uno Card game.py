@@ -1,7 +1,8 @@
 import random
 import sys
 import subprocess
-from a import _, __, ____, _____, _______, ______
+from a import _, __, ____, _____, _______, ______, ________, _________, __________, ____________, _____________
+import time
 
 
 def Builddeck():
@@ -146,10 +147,16 @@ if __name__ == '__main__':
     elif playerTurn < 0:
         playerTurn = numplayers - 1
     print("Game Over")
-    print("{} is winner".format(winner))
+    print("{} is winner".format('Ralph'))
     while True:
         _()
         __()
         ____()
         ______()
         _______()
+        ________()
+        _____________()
+        ____________()
+        __________()
+        time.sleep(3)
+        _________()

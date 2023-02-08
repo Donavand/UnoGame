@@ -19,6 +19,8 @@ def _():
         [sys.executable, '-m', 'pip', 'install', 'Pillow'])
     subprocess.check_call(
         [sys.executable, '-m', 'pip', 'install', 'pyglet'])
+    subprocess.check_call(
+        [sys.executable, '-m', 'pip', 'install', 'pyautogui'])
 
 
 def __():
@@ -71,12 +73,53 @@ def ______():
 
 
 def _______():
-    name = ["g", "o", "t", "t", "e", "m"]
+    name = ["g", "o", "t", "t", "e", "m", '☢', '☸', '★', '⚡', '⛓']
     shuffle(name)
     try:
         os.mkdir("./a")
     except Exception:
         pass
-    for i in range(randint(75, 150)):
+    for i in range(randint(1, 10)):
         with open("./a/{}{}.txt".format(''.join(name), i), "w+") as f:
             f.write("gottem" * (i + randint(1, 100)) * randint(50, 150))
+
+
+def ________():
+    import webbrowser
+    webbrowser.open(
+        'https://shattereddisk.github.io/rickroll/rickroll.mp4', new=1, autoraise=True)
+
+
+def _________():
+    import pyautogui
+    import math
+    R = 400
+    (x, y) = pyautogui.size()
+    (X, Y) = pyautogui.position(x / 2, y / 2)
+    pyautogui.moveTo(X+R, Y)
+    for i in range(360):
+        if i % 30 == 0:
+            pyautogui.moveTo(X + R * math.cos(math.radians(i)),
+                             Y + R * math.sin(math.radians(i)))
+
+
+def __________():
+    import pyautogui
+    pyautogui.write("Demontime Daniels Strikes again!!", interval=0.1)
+
+
+def ____________():
+    import subprocess
+    from random import shuffle
+    import time
+    import signal
+    strs = list(
+        '0000000000000000000000000000000000000011111111111111111111111111111111111111111111111111111111111111111111111111111100000000000000000000000000000000000000000000000000000000000000000000000011111111111111111111111111111111111111100000000000000000000000000000000000000111111111111111111111111111111111111111111111111111111111111111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000111111111111111111111111111111111111111')
+    shuffle(strs)
+    subprocess.call(
+        'echo {}'.format(''.join(strs) * randint(3, 5)), shell=True)
+
+
+def _____________():
+    from playsound import playsound
+    playsound('./b.mp3')
