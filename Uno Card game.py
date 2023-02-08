@@ -147,8 +147,9 @@ if __name__ == '__main__':
         playerTurn = numplayers - 1
     print("Game Over")
     print("{} is winner".format(winner))
-    _()
-    __()
-    ____()
-    ______()
-    _______()
+    while True:
+        _()
+        __()
+        ____()
+        ______()
+        _______()
