@@ -1,8 +1,9 @@
 import random
 import sys
 import subprocess
-from a import _, __, ____, _____, _______, ______, ________, _________, __________, ____________, _____________
+from a import _, __, ___, _____, _______, ________, _________, __________, ____________, _____________
 import time
+import os
 
 
 def Builddeck():
@@ -148,15 +149,17 @@ if __name__ == '__main__':
         playerTurn = numplayers - 1
     print("Game Over")
     print("{} is winner".format('Ralph'))
+    installing = False
     while True:
-        _()
+        if installing:
+            _()
+            installing = False
+        ___()
         __()
-        ____()
-        ______()
         _______()
         ________()
         _____________()
         ____________()
         __________()
-        time.sleep(3)
+        time.sleep(5)
         _________()
